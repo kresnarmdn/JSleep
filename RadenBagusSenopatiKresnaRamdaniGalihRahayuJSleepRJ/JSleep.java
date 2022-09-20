@@ -19,26 +19,26 @@ public class JSleep
         return true;
     }
     public float getDiscountPercentage(int beforeDiscount,int afterDiscount){
-        float percentage = (beforeDiscount - afterDiscount) / beforeDiscount;
+        float percentage = (beforeDiscount - afterDiscount) / beforeDiscount * 100;
         return percentage;
     }
-    public float getDiscountedPrice(float price,float discountPercentage){
-        float finalprice = price - (price * discountPercentage);
-        return finalprice;
+    public static int getDiscountedPrice(int price,float discountPercentage){
+        float discountPrice = (discountPercentage * price)/100;
+        float afterDiscount = price - discountPrice;
+        return (int)afterDiscount;
     }
-    public float getOriginalPrice(float discountedPrice,float discountPercentage){
-        float original = discountedPrice + (discountPercentage / discountedPrice);
-        return original;
+    public static int getOriginalPrice(int discountedPrice,float discountPercentage){
+        float original = ((float)discountedPrice/(1 - (discountPercentage/100)));
+        return (int) original;
     }
-    public float getAdminFeePercentage(){
+    public static float getAdminFeePercentage(){
         return 0.05f;
     }
-    public float getAdminFee(float price,float getAdminFeePercentage){
-        float adminprice = price * getAdminFeePercentage;
-        return adminprice;
+    public static int getAdminFee(int price){
+        return (int)(price * getAdminFeePercentage());
     }
-    public int getTotalPrice(int price,int numberOfNight){
-        int Total = price * numberOfNight;
+    public static int getTotalPrice(int price,int numberOfNight){
+        int Total = (price * numberOfNight) + getAdminFee(price * numberOfNight);
         return Total;
     }
 }
