@@ -10,7 +10,7 @@ public class Price
 {
     public double rebate;
     public double price;
-    public int discount;
+    public double discount;
     
     public Price(double price, int discount){
         this.price = price;
