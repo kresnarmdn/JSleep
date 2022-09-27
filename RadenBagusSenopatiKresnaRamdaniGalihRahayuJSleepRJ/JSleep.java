@@ -65,7 +65,7 @@ public class JSleep
     public static int getTotalPrice(int price,int numberOfNight){
         int Total = (price * numberOfNight) + getAdminFee(price * numberOfNight);
         return Total;
-    }*/
+    }
     
     public static void main(String[] args){
         Room test = createRoom();
@@ -74,11 +74,18 @@ public class JSleep
         System.out.println(test.size);
         System.out.println(test.price.price);
         System.out.println(test.facility);
+    }*/
+    
+    public static void main(String[] args){
+        Payment testRoom = new Payment(1, 1, 1, "", 1, "", "");
+        Invoice testInvoice = new Invoice(2, 2, 2, "");
+        System.out.println(testRoom.print());
+        System.out.println(testInvoice.print());
     }
     
-    public static Room createRoom(){
+    /*public static Room createRoom(){
         Price price = new Price (500000, 10);
         Room room = new Room ("hotel", 20, price, Facility.AC);
         return room;
-    }
+    }*/
 }
