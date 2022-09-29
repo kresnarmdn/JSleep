@@ -40,6 +40,6 @@ public class Room extends Serializable
     }
     
     public String toString(){
-        return "name = " + name + "\n" + "size = " + size + "\n" + "price = " + price + "\n" + "city = " + city + "\n" + "facility = " + facility + "\n";
+        return "name = " + name + "\n" + "size = " + size + "\n" + price + "\n" + "city = " + city + "\n" + "facility = " + facility + "\n";
     }
 }
