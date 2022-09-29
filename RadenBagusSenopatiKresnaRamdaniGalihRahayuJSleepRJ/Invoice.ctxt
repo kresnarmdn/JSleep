@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Invoice
-comment0.text=\r\n\ \r\n\r\n\ @kresnarmdn\ tp\ jarkom\ banyak\ bener\r\n\ @CS\ 3\r\n
+comment0.text=\r\n\ \r\n\r\n\ @kresnarmdn\ tp\ jarkom\ banyak\ bener\r\n\ @CS\ 3\r\n\ @updated\ PT\ 3\r\n
 comment1.params=id\ buyerId\ renterId\ time
 comment1.target=Invoice(int,\ int,\ int,\ java.lang.String)
 comment2.params=id\ buyer\ renter\ time

@@ -5,7 +5,8 @@ package RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ;
  *
  *
  * @kresnarmdn baru bangun ku terus ngoding
- * @PT Modul 2
+ * @PT 2
+ * @updated PT 3
  */
 public class Account extends Serializable
 {
@@ -18,5 +19,9 @@ public class Account extends Serializable
         this.name = name;
         this.email = email;
         this.password = password;
+    }
+    
+    public String toString(){
+        return "name = " + name + "\n" + "email = " + email + "\n" + "password = " + password + "\n";
     }
 }

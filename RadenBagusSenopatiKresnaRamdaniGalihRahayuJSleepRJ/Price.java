@@ -4,7 +4,9 @@ package RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ;
 /**
  *
  * @kresnarmdn minta tolong
- * @cs 2
+ * @CS 2
+ * @updated CS 3
+ * @updated PT 3
  */
 public class Price
 {
@@ -47,5 +49,9 @@ public class Price
         }
         
         return price - rebate;
+    }
+    
+    public String toString(){
+        return "Price = " + price + "\n" + "Discount = " + discount + "\n" + "Rebate = " + rebate + "\n";
     }
 }

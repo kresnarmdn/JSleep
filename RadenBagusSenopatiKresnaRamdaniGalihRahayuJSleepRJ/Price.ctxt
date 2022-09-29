@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Price
-comment0.text=\r\n\r\n\ @kresnarmdn\ minta\ tolong\r\n\ @cs\ 2\r\n
+comment0.text=\r\n\r\n\ @kresnarmdn\ minta\ tolong\r\n\ @CS\ 2\r\n\ @updated\ CS\ 3\r\n\ @updated\ PT\ 3\r\n
 comment1.params=price\ discount
 comment1.target=Price(double,\ int)
 comment2.params=price
@@ -11,4 +11,6 @@ comment4.params=
 comment4.target=double\ getDiscountedPrice()
 comment5.params=
 comment5.target=double\ getRebatedPrice()
-numComments=6
+comment6.params=
+comment6.target=java.lang.String\ toString()
+numComments=7

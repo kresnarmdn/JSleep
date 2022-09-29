@@ -6,12 +6,23 @@ package RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ;
  *
  * @kresnarmdn tp jarkom banyak bener
  * @CS 3
+ * @updated PT 3
  */
 public class Invoice extends Serializable
 {
     public int buyerId;
     public int renterId;
     public String time;
+    public PaymentStatus status = PaymentStatus.WAITING;
+    public RoomRating rating = RoomRating.NONE;
+    
+    public enum RoomRating {
+        NONE, BAD, NEUTRAL, GOOD;
+    }
+    
+    public enum PaymentStatus {
+        FAILERD, WAITING, SUCCESS;
+    }
     
     protected Invoice(int id, int buyerId, int renterId, String time){
         super(id);
