@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Voucher
-comment0.text=\r\n\ \r\n\r\n\ @kresnarmdn\ abis\ ide\ nama\r\n\ @PT\ Modul\ 2\r\n
+comment0.text=\r\n\ \r\n\r\n\ @kresnarmdn\ abis\ ide\ nama\r\n\ @PT\ 2\r\n\ @updated\ CS\ 4\r\n
 comment1.params=id\ name\ code\ type\ used\ minimum\ cut
 comment1.target=Voucher(int,\ java.lang.String,\ int,\ Type,\ boolean,\ double,\ double)
 comment2.params=price
@@ -9,4 +9,8 @@ comment3.params=price
 comment3.target=double\ apply(Price)
 comment4.params=
 comment4.target=boolean\ isUsed()
-numComments=5
+comment5.params=
+comment5.target=java.lang.Object\ write()
+comment6.params=arr
+comment6.target=boolean\ read(java.lang.String)
+numComments=7

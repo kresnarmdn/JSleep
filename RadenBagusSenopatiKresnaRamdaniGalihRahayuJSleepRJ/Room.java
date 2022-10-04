@@ -7,8 +7,9 @@ package RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ;
  * @CS 2
  * @updated CS 3
  * @updated PT 3
+ * @updated CS 4
  */
-public class Room extends Serializable
+public class Room extends Serializable implements FileParser
 {
     /*public int size;
     public String name;
@@ -41,5 +42,13 @@ public class Room extends Serializable
     
     public String toString(){
         return "name = " + name + "\n" + "size = " + size + "\n" + price + "\n" + "city = " + city + "\n" + "facility = " + facility + "\n";
+    }
+    
+    public Object write(){
+        return null;
+    }
+    
+    public boolean read(String arr){
+        return false;
     }
 }

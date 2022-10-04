@@ -5,9 +5,10 @@ package RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ;
  * 
  *
  * @kresnarmdn abis ide nama
- * @PT Modul 2
+ * @PT 2
+ * @updated CS 4
  */
-public class Voucher extends Serializable
+public class Voucher extends Serializable implements FileParser
 {
     public Type type;
     public double cut;
@@ -49,5 +50,13 @@ public class Voucher extends Serializable
     
     public boolean isUsed(){
         return this.used;
+    }
+    
+    public Object write(){
+        return null;
+    }
+    
+    public boolean read(String arr){
+        return false;
     }
 }
