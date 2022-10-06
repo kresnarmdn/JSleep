@@ -8,15 +8,17 @@ package RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ;
  * @CS 3
  * @updated PT 3
  * @updated CS 4
+ * @updated PT 4
  */
 
-import java.util.Calendar;
+/*import java.util.Calendar;*/
+import java.util.Date;
 
 public class Invoice extends Serializable
 {
     public int buyerId;
     public int renterId;
-    public Calendar time = Calendar.getInstance();
+    public Date time = new Date();
     public PaymentStatus status = PaymentStatus.WAITING;
     public RoomRating rating = RoomRating.NONE;
     

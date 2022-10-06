@@ -6,9 +6,35 @@ package RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ;
  * @kresnarmdn mau turu
  * 
  */
+
+import java.util.Date;
+import java.lang.String;
+
 public class JSleep
 {
     public static void main(String[] args){
+        Room RoomA = JSleep.createRoom();
+        Room RoomB = JSleep.createRoom();
+        System.out.println("Membuat booking dari tanggal 15 hingga 18");
+        Date start = Date.valueOf("2022-8-15");
+        Date end = Date.valueOf("2022-8-20");
+        System.out.println(Payment.makeBooking(start, end,RoomA));
+        System.out.println("Membuat booking dari tanggal 15 hingga 18");
+        Date start2 = Date.valueOf("2022-8-18");
+        Date end2 = Date.valueOf("2022-8-20");
+        System.out.println(Payment.makeBooking(start2, end2,RoomA));
+        System.out.println("Membuat booking dari tanggal 15 hingga 18 untuk kamar berbeda");
+        Date start3 = Date.valueOf("2022-8-18");
+        Date end3 = Date.valueOf("2022-8-20");
+        System.out.println(Payment.makeBooking(start3, end3,RoomB));
+        
+        System.out.println("Membuat booking dari tanggal 20 hingga 15");
+        Date start = Date.valueOf("2022-8-20");
+        Date end = Date.valueOf("2022-8-15");
+        System.out.println(Payment.makeBooking(start, end,RoomA));
+    }
+    
+    /*public static void main(String[] args){
         Payment testPayment = new Payment(2, 2, 2,2);
         System.out.println(testPayment.getTime());
         System.out.println(testPayment.getDuration());
@@ -26,7 +52,8 @@ public class JSleep
         System.out.println(Validate.filter(unfilteredArray, 12000,true));
         System.out.println("Above 10000.0");
         System.out.println(Validate.filter(unfilteredArray, 10000,false));
-    }
+    }*/
+    
     /*public static void main(String[] args){
         Complaint testComplain = new Complaint(1, "23 August 2022", "Bad Quality");
         Price testPrice = new Price(100000, 20000);
@@ -118,9 +145,9 @@ public class JSleep
         System.out.println(testInvoice.print());
     }*/
     
-    /*public static Room createRoom(){
+    public static Room createRoom(){
         Price price = new Price (500000, 10);
-        Room room = new Room ("hotel", 20, price, Facility.AC);
+        Room room = new Room (1, "hotel", 20, price, Facility.AC, City.DEPOK, "Jl. yang disakiti");
         return room;
-    }*/
+    }
 }
