@@ -13,6 +13,9 @@ import java.lang.String;
 public class JSleep
 {
     public static void main(String[] args){
+        System.out.println("Hello from Intellij!");
+    }
+    /*public static void main(String[] args){
         Room RoomA = JSleep.createRoom();
         Room RoomB = JSleep.createRoom();
         System.out.println("Membuat booking dari tanggal 15 hingga 18");
@@ -32,7 +35,7 @@ public class JSleep
         Date start = Date.valueOf("2022-8-20");
         Date end = Date.valueOf("2022-8-15");
         System.out.println(Payment.makeBooking(start, end,RoomA));
-    }
+    }*/
     
     /*public static void main(String[] args){
         Payment testPayment = new Payment(2, 2, 2,2);

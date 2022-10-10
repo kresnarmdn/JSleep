@@ -1,1 +1,0 @@
-mari bantu kena menyelesaikan cs oop

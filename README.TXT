@@ -1,1 +1,0 @@
-bismillah bismintul bismillah kita mantul
