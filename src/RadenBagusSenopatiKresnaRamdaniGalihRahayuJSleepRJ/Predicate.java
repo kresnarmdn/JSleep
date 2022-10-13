@@ -1,5 +1,5 @@
 package RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ;
 
-public interface Predicate {
-    public <T> boolean predicate(T);
+public interface Predicate<T> {
+    public boolean predicate(T value);
 }
