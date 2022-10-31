@@ -9,7 +9,7 @@ import java.util.*;
  * @CS 5
  * @updated PT 5
  */
-
+/*
 import java.util.function.Predicate;
 import java.util.Iterator;
 
@@ -228,3 +228,4 @@ public class Algorithm {
         return list;
     }
 }
+*/
