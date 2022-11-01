@@ -18,21 +18,22 @@ import com.google.gson.*;
 
 public class JSleep
 {
-    //gabisa cukkkk
-    /*try
-    {
-        String filepath = "json/randomRoomList.json";
-
-        JsonTable<Room> tableRoom = new JsonTable<>(Room.class, filepath);
-        List<Room> filterTableRoom = filterByCity(tableRoom, "medan", 0, 5);
-        filterTableRoom.forEach(room -> System.out.println(room.toString()));
-    }
-    catch (Throwable t)
-    {
-        t.printStackTrace();
-    }*/
 
     public static void main(String[] args){
+        Gson gson = new Gson();
+        try
+        {
+            String filepath = "C:\\Users\\lenovo\\Documents\\kuliah geng\\PBO\\Praktikum\\JSleep\\src\\json\\randomRoomList.json";
+
+            JsonTable<Room> tableRoom = new JsonTable<>(Room.class, filepath);
+            List<Room> filterTableRoom = filterByCity(tableRoom, "medan", 0, 5);
+            filterTableRoom.forEach(room -> System.out.println(room.toString()));
+        }
+        catch (Throwable t)
+        {
+            t.printStackTrace();
+        }
+
         Renter testRegex = new Renter("Netlab_", "0812234567890", "Jl Margonda Raya");
         Renter testRegexFail = new Renter("netlab", "081", "Jalan");
         System.out.println(testRegex.validate());
