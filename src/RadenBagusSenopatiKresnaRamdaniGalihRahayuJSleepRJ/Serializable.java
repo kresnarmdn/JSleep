@@ -14,46 +14,36 @@ import java.util.HashMap;
 public class Serializable
 {
     public final int id;
+    private static HashMap<Class<?>, Integer> mapCounter = new HashMap<Class<?>, Integer>();
 
-    private static HashMap<Class<?>, Integer> mapCounter;
-
-    protected Serializable(int id){
-        if(mapCounter.get(getClass()) != null){
-            this.id = (mapCounter.get(getClass()) + 1);
+    protected Serializable() {
+        Integer counter = mapCounter.get(getClass());
+        if (counter == null){
+            counter =  0;
         }
         else{
-            this.id = 0;
+            counter +=1;
         }
+        mapCounter.put(getClass(), counter);
+        this.id = counter;
     }
 
-    public int compareTo(Serializable comp){
-        Integer newId = this.id;
-        return newId.compareTo(comp.id);
+    public static <T extends Serializable> Integer setClosingId(Class<T> clazz, int id) { return mapCounter.put(clazz, id); }
+
+    public static <T extends Serializable> Integer getClosingId(Class<T> clazz) { return mapCounter.get(clazz); }
+
+    public boolean equals(Object other)
+    {
+        return other instanceof Serializable && ((Serializable) other).id == id;
     }
 
-    public boolean equals(Object comp){
-        if(((((Serializable)comp).id) == this.id) && (comp instanceof Serializable)){
-            return true;
-        }
-        else {
-            return false;
-        }
+    public boolean equals(Serializable other)
+    {
+        return other.id == id;
     }
 
-    public boolean equals(Serializable comp){
-        if(this.id == comp.id){
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
-    public static Integer getClosingId(Class<?> key){
-        return mapCounter.get(key);
-    }
-
-    public static Integer setClosingId(Class<?> key, int value){
-        return mapCounter.put(key, value);
+    public int compareTo(Serializable other)
+    {
+        return Integer.compare(this.id, other.id);
     }
 }

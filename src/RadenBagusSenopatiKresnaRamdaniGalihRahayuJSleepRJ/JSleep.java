@@ -13,16 +13,49 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
+import java.util.regex.Pattern;
 import com.google.gson.*;
 
 public class JSleep
 {
-    class Country{
+    //gabisa cukkkk
+    /*try
+    {
+        String filepath = "json/randomRoomList.json";
+
+        JsonTable<Room> tableRoom = new JsonTable<>(Room.class, filepath);
+        List<Room> filterTableRoom = filterByCity(tableRoom, "medan", 0, 5);
+        filterTableRoom.forEach(room -> System.out.println(room.toString()));
+    }
+    catch (Throwable t)
+    {
+        t.printStackTrace();
+    }*/
+
+    public static void main(String[] args){
+        Renter testRegex = new Renter("Netlab_", "0812234567890", "Jl Margonda Raya");
+        Renter testRegexFail = new Renter("netlab", "081", "Jalan");
+        System.out.println(testRegex.validate());
+        System.out.println(testRegexFail.validate());
+    }
+
+    public static List<Room> filterByCity(List<Room> room, String city, int page, int pageSize){
+        return Algorithm.paginate(room, page, pageSize, i -> i.city == City.valueOf(city.toUpperCase()));
+    }
+
+    public static List<Room> filterByPrice(List<Room> room, double minPrice, double maxPrice){
+        return Algorithm.<Room>collect(room, i -> ((i.price.price >= minPrice) && (i.price.price <= maxPrice)));
+    }
+
+    public static List<Room> filterByAccountId(List<Room> room, int accountId, int page, int pageSize){
+        return Algorithm.<Room>paginate(room, page, pageSize, i -> i.accountId == accountId);
+    }
+    /*class Country{
         public String name;
         public int population;
         public List<String> listOfStates;
-    }
-    public static void main(String[] args){
+    }*/
+    /*public static void main(String[] args){
         String filepath= "C:\\Users\\lenovo\\Documents\\kuliah geng\\PBO\\Praktikum\\JSleep\\city.json";
         Gson gson = new Gson();
 
@@ -39,7 +72,7 @@ public class JSleep
             e.printStackTrace();
         }
 
-    }
+    }*/
     /*public static void main(String[] args){
         System.out.println("Hello from Intellij!");
     }*/
@@ -176,9 +209,9 @@ public class JSleep
         System.out.println(testInvoice.print());
     }*/
     
-    public static Room createRoom(){
+    /*public static Room createRoom(){
         Price price = new Price (500000, 10);
         Room room = new Room (1, "hotel", 20, price, Facility.AC, City.DEPOK, "Jl. yang disakiti");
         return room;
-    }
+    }*/
 }

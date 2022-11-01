@@ -6,6 +6,7 @@ package RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ;
  *
  * @kresnarmdn pusing masuk array
  * @CS 4
+ * @updated CS 6
  */
 
 import java.util.ArrayList;
@@ -13,19 +14,21 @@ import java.util.ArrayList;
 public class Validate
 {
     public static ArrayList filter(Price[] list, int value, boolean less){
-        ArrayList<Price> result = new ArrayList<Price>();
-        for (Price price: list){
-            if (less) {
-                if (price.price <= value){
-                    result.add(price);
-                }
-            }
-            else{
-                if (price.price >= value){
-                    result.add(price);
+        ArrayList filteredPrice = new ArrayList();
+        if(less == true) {
+            for (Price iterator : list) {
+                if(iterator.price <= value){
+                    filteredPrice.add(iterator.price);
                 }
             }
         }
-        return result;
+        else{
+            for (Price iterator : list) {
+                if(iterator.price > value){
+                    filteredPrice.add(iterator.price);
+                }
+            }
+        }
+        return filteredPrice;
     }
 }

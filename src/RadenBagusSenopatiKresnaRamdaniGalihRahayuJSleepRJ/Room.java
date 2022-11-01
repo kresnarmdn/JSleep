@@ -9,12 +9,13 @@ package RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ;
  * @updated PT 3
  * @updated CS 4
  * @updated PT 4
+ * @updated CS 6
  */
 
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Room extends Serializable implements FileParser
+public class Room extends Serializable /*implements FileParser*/
 {
     /*public int size;
     public String name;
@@ -35,9 +36,10 @@ public class Room extends Serializable implements FileParser
     public City city;
     public String name;
     public ArrayList<Date> booked;
+    public int accountId;
     
-    public Room(int id, String name, int size, Price price, Facility facility, City city, String address){
-        super(id);
+    public Room(int accountId, String name, int size, Price price, Facility facility, City city, String address){
+        this.accountId = accountId;
         this.name = name;
         this.size = size;
         this.price = price;
@@ -50,9 +52,9 @@ public class Room extends Serializable implements FileParser
         return "name = " + name + "\n" + "size = " + size + "\n" + price + "\n" + "city = " + city + "\n" + "facility = " + facility + "\n";
     }
     
-    public Object write(){
+    /*public Object write(){
         return null;
-    }
+    }*/
     
     public boolean read(String arr){
         return false;

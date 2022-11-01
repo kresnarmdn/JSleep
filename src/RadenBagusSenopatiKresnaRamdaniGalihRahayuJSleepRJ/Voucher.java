@@ -8,7 +8,7 @@ package RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ;
  * @PT 2
  * @updated CS 4
  */
-public class Voucher extends Serializable implements FileParser
+public class Voucher extends Serializable /*implements FileParser*/
 {
     public Type type;
     public double cut;
@@ -18,7 +18,6 @@ public class Voucher extends Serializable implements FileParser
     private boolean used;
     
     public Voucher(int id, String name, int code, Type type, boolean used, double minimum, double cut){
-        super(id);
         this.name = name;
         this.code = code;
         this.type = type;
@@ -52,9 +51,9 @@ public class Voucher extends Serializable implements FileParser
         return this.used;
     }
     
-    public Object write(){
+    /*public Object write(){
         return null;
-    }
+    }*/
     
     public boolean read(String arr){
         return false;

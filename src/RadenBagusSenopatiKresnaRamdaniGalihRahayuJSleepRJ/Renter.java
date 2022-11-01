@@ -6,15 +6,28 @@ package RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ;
  *
  * @kresnarmdn baru tau tekkom nguli
  * @CS 3
+ * @updated CS 6
  */
 public class Renter extends Serializable
 {
-    public int phoneNumber = 0;
+    final public static String REGEX_NAME = "^[A-Z][a-zA-z0-9_]{4,20}$";
+    public String phoneNumber;
     public String address = "";
     public String username;
+    final public static String REGEX_PHONE = "[0-9]{9,12}";
+
+    public Renter(String username, String phoneNumber, String address){
+        this.username = username;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+    }
+
+    public boolean validate(){
+        return this.username.matches(REGEX_NAME) && this.phoneNumber.matches(REGEX_PHONE);
+    }
     
     
-    public Renter(int id, String username, int phoneNumber){
+    /*public Renter(int id, String username, int phoneNumber){
         super(id);
         this.username = username;
         this.phoneNumber = phoneNumber;
@@ -36,5 +49,5 @@ public class Renter extends Serializable
         this.username = username;
         this.phoneNumber = phoneNumber;
         this.address = address;
-    }
+    }*/
 }
