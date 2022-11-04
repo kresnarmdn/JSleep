@@ -8,12 +8,15 @@ package RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ;
  * @PT 2
  * @updated PT 3
  * @updated CS 4
+ * @updated PT 6
  */
 public class Account extends Serializable /*implements FileParser*/
 {
     public String name;
     public String email;
     public String password;
+    final public static String REGEX_EMAIL = "[a-zA-Z0-9][@][a-zA-Z][.com]{9,12}";
+    final public static String REGEX_PASSWORD = "[a-zA-Z0-9]{8,20}";
     
     public Account(int id, String name, String email, String password){
         /*super(id);*/
@@ -33,4 +36,8 @@ public class Account extends Serializable /*implements FileParser*/
     public boolean read(String arr){
         return false;
     }
+
+    /*public boolean validate{
+
+    }*/
 }
