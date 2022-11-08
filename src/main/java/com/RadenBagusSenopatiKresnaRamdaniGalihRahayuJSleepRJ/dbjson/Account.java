@@ -1,5 +1,7 @@
-package com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ;
+package com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ.dbjson;
 
+
+import com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ.dbjson.Serializable;
 
 /**
  *
@@ -15,8 +17,10 @@ public class Account extends Serializable /*implements FileParser*/
     public String name;
     public String email;
     public String password;
-    final public static String REGEX_EMAIL = "[a-zA-Z0-9][@][a-zA-Z][.com]{9,12}";
-    final public static String REGEX_PASSWORD = "[a-zA-Z0-9]{8,20}";
+    public double balance;
+    public String renter;
+    final public static String REGEX_EMAIL = "^[a-zA-Z0-9]+@[a-zA-Z]+([.]?[A-Za-z]+)*\\\\.[A-Za-z]+$";
+    final public static String REGEX_PASSWORD = "^(?=.*a-z)(?=.*A-Z)(?=.*0-9)[a-zA-Z0-9]{8,}$";
     
     public Account(String name, String email, String password){
         /*super(id);*/

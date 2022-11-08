@@ -1,4 +1,4 @@
-package com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ;
+package com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ.dbjson;
 
 
 /**
@@ -11,8 +11,6 @@ package com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ;
  */
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -42,7 +40,7 @@ public class Payment extends Invoice
         return roomId;
     }
 
-    public static boolean makeBooking(Date from,Date to,Room room){
+    public static boolean makeBooking(Date from, Date to, Room room){
         if(availability(from, to, room)){
             Calendar start = Calendar.getInstance();
             start.setTime(from);

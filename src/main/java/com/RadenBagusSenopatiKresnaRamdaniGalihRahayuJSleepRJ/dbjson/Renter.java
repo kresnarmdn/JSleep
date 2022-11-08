@@ -1,5 +1,7 @@
-package com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ;
+package com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ.dbjson;
 
+
+import com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ.dbjson.Serializable;
 
 /**
  * 

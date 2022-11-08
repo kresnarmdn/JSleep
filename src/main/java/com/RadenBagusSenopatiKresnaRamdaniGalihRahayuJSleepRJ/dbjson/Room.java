@@ -1,4 +1,4 @@
-package com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ;
+package com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ.dbjson;
 
 
 /**
@@ -11,6 +11,12 @@ package com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ;
  * @updated PT 4
  * @updated CS 6
  */
+
+import com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ.BedType;
+import com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ.City;
+import com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ.Facility;
+import com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ.Price;
+import com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ.dbjson.Serializable;
 
 import java.util.ArrayList;
 import java.util.Date;

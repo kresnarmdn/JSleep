@@ -1,4 +1,4 @@
-package com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ;
+package com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ.dbjson;
 
 
 /**
@@ -12,6 +12,7 @@ package com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ;
  */
 
 /*import java.util.Calendar;*/
+
 import java.util.Date;
 
 public class Invoice extends Serializable

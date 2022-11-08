@@ -1,4 +1,4 @@
-package com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ;
+package com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ.dbjson;
 
 
 /**
@@ -11,7 +11,7 @@ package com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ;
 
 import java.util.HashMap;
 
-public class Serializable
+public class Serializable implements Comparable<Serializable>
 {
     public final int id;
     private static HashMap<Class<?>, Integer> mapCounter = new HashMap<Class<?>, Integer>();
