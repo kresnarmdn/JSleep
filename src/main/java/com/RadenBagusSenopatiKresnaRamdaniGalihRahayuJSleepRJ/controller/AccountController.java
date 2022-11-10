@@ -27,12 +27,12 @@ public class AccountController implements BasicGetController<Account>
     @GetMapping
     String index() { return "account page"; }
 
-    @PostMapping("account/login")
+    @PostMapping("/account/login")
     Account login(@RequestParam String email, @RequestParam String password){
         return Algorithm.<Account>find(accountTable, acc-> acc.email==email & acc.password == password);
     }
 
-    @PostMapping("account/register")
+    @PostMapping("/account/register")
     Account register
             (
                     @RequestParam String name,
@@ -43,7 +43,7 @@ public class AccountController implements BasicGetController<Account>
         return new Account(name, email, password);
     }
 
-    @PostMapping("account/{id}/registerRenter")
+    @PostMapping("/account/{id}/registerRenter")
     Renter registerRenter
             (
                     @PathVariable int id,
@@ -66,7 +66,7 @@ public class AccountController implements BasicGetController<Account>
     //}
 
 
-    @PostMapping("account/{id}/topUp")
+    @PostMapping("/account/{id}/topUp")
     boolean topUp
             (
                 @PathVariable int id,

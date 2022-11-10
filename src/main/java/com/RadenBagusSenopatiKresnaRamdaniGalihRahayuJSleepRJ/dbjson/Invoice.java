@@ -13,13 +13,13 @@ package com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ.dbjson;
 
 /*import java.util.Calendar;*/
 
-import java.util.Date;
+/*import java.util.Date;*/
 
 public class Invoice extends Serializable
 {
     public int buyerId;
     public int renterId;
-    public Date time = new Date();
+    /*public Date time = new Date();*/
     public PaymentStatus status = PaymentStatus.WAITING;
     public RoomRating rating = RoomRating.NONE;
     
@@ -42,6 +42,6 @@ public class Invoice extends Serializable
     }
     
     public String print(){
-        return "buyerId = " + buyerId + "\n" + "renterId = " + renterId + "\n" + "time = " + time + "\n";
+        return "buyerId = " + buyerId + "\n" + "renterId = " + renterId + "\n" /*+ "time = " + time + "\n"*/;
     }
 }
