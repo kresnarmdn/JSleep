@@ -1,8 +1,6 @@
 package com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ.controller;
 
-import com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ.City;
-import com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ.Facility;
-import com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ.JsonTable;
+import com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ.*;
 import com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ.dbjson.JsonAutowired;
 import com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ.dbjson.Room;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,15 +19,18 @@ public class RoomController implements BasicGetController<Room>{
         return roomTable;
     }
 
-    /*@GetMapping("/room/{id}/renter")
+    @GetMapping("/room/{id}/renter")
     List<Room> getRoomByRenter(@PathVariable int id, @RequestParam int page, @RequestParam int pageSize){
-
+        return Algorithm.<Room>paginate(getJsonTable(), page, pageSize, pred -> pred.id == id);
     }
 
     @PostMapping("/room/create")
     public Room create(@RequestParam int accountId, @RequestParam String name, @RequestParam int size,
                        @RequestParam int price, @RequestParam Facility facility, @RequestParam City city,
                        @RequestParam String address){
-
-    }*/
+        Price harga = new Price(price);
+        Room room = new Room(accountId, name, size, harga, facility, city, address);
+        roomTable.add(room);
+        return room;
+    }
 }

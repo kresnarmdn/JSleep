@@ -7,6 +7,11 @@ import com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ.dbjson.Renter;
 import org.springframework.web.bind.annotation.*;
 import com.RadenBagusSenopatiKresnaRamdaniGalihRahayuJSleepRJ.dbjson.JsonAutowired;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 // TODO sesuaikan dengan package Anda: package com.netlabJSleepGS.controller;
 
 
@@ -29,7 +34,27 @@ public class AccountController implements BasicGetController<Account>
 
     @PostMapping("/account/login")
     Account login(@RequestParam String email, @RequestParam String password){
-        return Algorithm.<Account>find(accountTable, acc-> acc.email==email & acc.password == password);
+        String enc = null;
+        try{
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] Byte = md.digest(password.getBytes());
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < Byte.length; i++){
+                builder.append(Integer.toString((Byte[i] & 0xff) + 0x100, 16).substring(1));
+            }
+            enc = builder.toString();
+        }
+        catch (NoSuchAlgorithmException t) {
+            t.printStackTrace();
+        }
+        String encrypted = enc;
+        Account acc = Algorithm.<Account>find(accountTable, pred -> pred.email == email & pred.password == password);
+        if (acc != null || encrypted == acc.password){
+            return acc;
+        }
+        else{
+            return null;
+        }
     }
 
     @PostMapping("/account/register")
@@ -40,11 +65,39 @@ public class AccountController implements BasicGetController<Account>
                     @RequestParam String password
             )
     {
-        return new Account(name, email, password);
+        Pattern Mail = Pattern.compile(REGEX_EMAIL);
+        Pattern Pass = Pattern.compile(REGEX_PASSWORD);
+
+        Matcher matcherMail = Mail.matcher(email);
+        Matcher matcherPass = Pass.matcher(password);
+
+        boolean match1 = matcherMail.find();
+        boolean match2 = matcherPass.find();
+
+        if (!name.isBlank() && match1 && match2){
+            String enc = null;
+            try{
+                MessageDigest md = MessageDigest.getInstance("MD5");
+                byte[] Byte = md.digest(password.getBytes());
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < Byte.length; i++){
+                    builder.append(Integer.toString((Byte[i] & 0xff) + 0x100, 16).substring(1));
+                }
+                enc = builder.toString();
+            }
+            catch (NoSuchAlgorithmException t){
+                t.printStackTrace();
+            }
+            String encrypted = enc;
+            return new Account(name, email, encrypted);
+        }
+        else{
+            return null;
+        }
     }
 
     @PostMapping("/account/{id}/registerRenter")
-    Renter registerRenter
+    String registerRenter
             (
                     @PathVariable int id,
                     @RequestParam String username,
@@ -52,7 +105,14 @@ public class AccountController implements BasicGetController<Account>
                     @RequestParam String phoneNumber
             )
     {
-        return null;
+        Account acc = Algorithm.<Account>find(accountTable, pred -> id == pred.id);
+        if (acc.renter == null){
+            acc.renter = new Renter(username, address, phoneNumber).toString();
+            return acc.renter;
+        }
+        else{
+            return null;
+        }
     }
 
     @Override
